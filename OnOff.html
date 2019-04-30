@@ -33,17 +33,19 @@ function ondo(){
    if(id >= 25){
               Parse.User.current().set("auto","ON")
                Parse.User.current().save()
+                alert("선풍기가 켜졌습니다.");
           }
           else {
              Parse.User.current().set("auto","OFF")
               Parse.User.current().save()
+               alert("선풍기가 꺼졌습니다.");
                 }
         }
     function On() {
 
     Parse.User.current().set("OnOff","ON");
     Parse.User.current().save();
-    alert("켜졌습니다.");
+    alert("자동 센서가 켜졌습니다.");
       var id = $("#Ondo").val();
    if(id >= 25){
               Parse.User.current().set("auto","ON")
@@ -58,7 +60,7 @@ function ondo(){
 
     Parse.User.current().set("OnOff","OFF");
     Parse.User.current().save();
-    alert("꺼졌습니다.");
+    alert("자동 센서가 꺼졌습니다.");
 
 }
     
