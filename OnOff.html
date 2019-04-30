@@ -6,9 +6,8 @@
   <meta name="description" content="My Parse App">
   <meta name="viewport" content="width=device-width">
 
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-
-  <script type="text/javascript" src="https://npmcdn.com/parse@2.1.0/dist/parse.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://npmcdn.com/parse@2.1.0/dist/parse.js"></script>
 
 </head>
 
@@ -24,20 +23,20 @@
 
   </div>
 	<script type="text/javascript">
-        Parse.initialize("MIN");
+        Parse.initialize("limminsub");
         Parse.serverURL="https://minsubserver.herokuapp.com/parse"
      
 
 function ondo(){
      var id = $("#Ondo").val();
-   if(id >= 25){
-              Parse.User.current().set("auto","ON")
-               Parse.User.current().save()
+   if(id >= 25 && Parse.User.current().get("OnOff") != "OFF"){
+              Parse.User.current().set("auto","ON");
+               Parse.User.current().save();
                 alert("선풍기가 켜졌습니다.");
           }
           else {
-             Parse.User.current().set("auto","OFF")
-              Parse.User.current().save()
+             Parse.User.current().set("auto","OFF");
+              Parse.User.current().save();
                alert("선풍기가 꺼졌습니다.");
                 }
         }
@@ -48,12 +47,13 @@ function ondo(){
     alert("자동 센서가 켜졌습니다.");
       var id = $("#Ondo").val();
    if(id >= 25){
-              Parse.User.current().set("auto","ON")
-               Parse.User.current().save()
+              Parse.User.current().set("auto","ON");
+               Parse.User.current().save();
+               alert("선풍기가 켜졌습니다.");
           }
           else {
-             Parse.User.current().set("auto","OFF")
-              Parse.User.current().save()
+             Parse.User.current().set("auto","OFF");
+              Parse.User.current().save();
                 }
 }
  function Off() {
